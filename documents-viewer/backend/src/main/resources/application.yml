@@ -1,0 +1,21 @@
+server:
+  port: 8888
+
+logging:
+  config: classpath:logback-spring.xml
+
+cors:
+  allow: true
+
+spring:
+  datasource:
+    url: jdbc:postgresql://database:5432/documents
+    username: user
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:migrations/db.changelog-master.xml
+  kafka:
+    bootstrap-servers: kafka:9092
